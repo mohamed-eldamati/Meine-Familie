@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meine Familie – Deutsch A1</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d2b53;--der:#2f7de1;--derbg:#e3f0ff;--die:#e0447c;--diebg:#ffe4ef;--pl:#1f9d6b;--plbg:#dcf7ea;--sun:#ffc93c;--card:#ffffffee}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;font-family:'Fredoka','Trebuchet MS',system-ui,sans-serif;font-weight:500;color:var(--ink);
+background:
+ radial-gradient(circle at 88% 8%,#ffe27a 0 60px,#ffe27a55 61px 110px,transparent 111px),
+ radial-gradient(ellipse 120px 40px at 15% 14%,#fff 60%,transparent 62%),
+ radial-gradient(ellipse 160px 50px at 55% 26%,#ffffffcc 60%,transparent 62%),
+ radial-gradient(ellipse 420px 130px at 20% 100%,#7fd6a0 60%,transparent 61%),
+ radial-gradient(ellipse 520px 160px at 85% 100%,#5cc48a 60%,transparent 61%),
+ linear-gradient(#8fd3ff,#d9f2ff 55%,#fff6d6);
+background-attachment:fixed;padding-bottom:70px}
+header{text-align:center;padding:28px 16px 8px}
+h1{font-size:clamp(2.4rem,7vw,4.4rem);margin:0;font-weight:700;letter-spacing:.5px;text-shadow:0 4px 0 #fff}
+.sub{font-size:1.2rem;margin:6px 0 0}
+.hero{font-size:clamp(2.6rem,9vw,4.5rem);margin:6px 0;display:flex;justify-content:center;gap:.05em;flex-wrap:wrap}
+.hero span{display:inline-block;animation:hop 2.6s ease-in-out infinite}
+.hero span:nth-child(2){animation-delay:.2s}.hero span:nth-child(3){animation-delay:.4s}.hero span:nth-child(4){animation-delay:.6s}.hero span:nth-child(5){animation-delay:.8s}.hero span:nth-child(6){animation-delay:1s}
+@keyframes hop{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-14px)}}
+nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:14px 10px}
+nav button,.btn{font:inherit;font-weight:600;font-size:1.15rem;border:0;border-radius:999px;padding:12px 24px;background:#fff;color:var(--ink);cursor:pointer;box-shadow:0 5px 0 #b7c8e6;transition:transform .1s}
+nav button:active,.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #b7c8e6}
+nav button[aria-selected=true]{background:var(--sun);box-shadow:0 5px 0 #d99f00}
+button:focus-visible{outline:4px solid var(--ink);outline-offset:3px}
+#snd{position:fixed;top:12px;right:12px;z-index:5;padding:8px 16px;font-size:1rem}
+main{max-width:1050px;margin:0 auto;padding:0 14px}
+section[hidden]{display:none}
+.group{background:var(--card);border-radius:28px;padding:18px 18px 22px;margin:18px 0;box-shadow:0 8px 0 #ffffff88}
+.group h2{margin:0 0 4px;font-size:1.7rem}
+.group p{margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.card{font:inherit;color:inherit;text-align:center;border:4px solid;border-radius:24px;padding:14px 10px 12px;cursor:pointer;background:#fff;transition:transform .15s}
+.card:hover{transform:translateY(-4px) rotate(-1deg)}
+.card.der{border-color:var(--der);background:var(--derbg)}
+.card.die{border-color:var(--die);background:var(--diebg)}
+.card.pl{border-color:var(--pl);background:var(--plbg)}
+.card .e{font-size:4rem;line-height:1.1;display:block}
+.card .a{font-size:1.15rem;font-weight:700}
+.der .a{color:var(--der)}.die .a{color:var(--die)}.pl .a{color:var(--pl)}
+.card .w{font-size:1.9rem;font-weight:700;display:block;line-height:1.1}
+.card .s{font-size:1rem;display:block;margin-top:8px;opacity:.85}
+.card.on{animation:pop .4s}
+@keyframes pop{50%{transform:scale(1.08)}}
+.legend{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.tag{padding:6px 16px;border-radius:999px;color:#fff;font-weight:600}
+.tag.der{background:var(--der)}.tag.die{background:var(--die)}.tag.pl{background:var(--pl)}
+/* tree */
+.tree{display:flex;flex-direction:column;align-items:center;gap:0}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.line{width:6px;height:26px;background:var(--ink);border-radius:3px;opacity:.5}
+.fam{border:4px dashed #ffffff;background:#ffffff88;border-radius:26px;padding:10px 12px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.fams{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.p{font:inherit;color:inherit;border:0;background:#fff;border-radius:20px;padding:8px 10px;min-width:104px;cursor:pointer;box-shadow:0 5px 0 #b7c8e6;text-align:center}
+.p:hover{transform:translateY(-3px)}
+.p .e{font-size:2.6rem;display:block;line-height:1.1}
+.p b{font-size:1.1rem}
+.p.der b{color:var(--der)}.p.die b{color:var(--die)}
+.p.me{background:var(--sun);box-shadow:0 5px 0 #d99f00}
+.bubble{margin:16px auto 0;max-width:560px;background:#fff;border-radius:22px;padding:14px 20px;font-size:1.5rem;font-weight:600;text-align:center;border:4px solid var(--ink);min-height:64px}
+/* quiz */
+.qbox{background:var(--card);border-radius:28px;padding:22px;max-width:700px;margin:18px auto;text-align:center}
+.stats{display:flex;justify-content:space-between;font-weight:600;font-size:1.15rem;margin-bottom:10px}
+.bar{height:14px;background:#dfe8f7;border-radius:8px;overflow:hidden;margin-bottom:16px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sun),#ff8a3d);transition:width .3s}
+.task{font-size:1.25rem;margin:0 0 6px}
+.clue{font-size:1.7rem;font-weight:600;margin:8px 0 18px;line-height:1.3}
+.big{font-size:5.5rem;line-height:1.1;min-height:6rem}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.opt{font:inherit;font-weight:600;font-size:1.4rem;padding:14px;border-radius:18px;border:4px solid #b7c8e6;background:#fff;cursor:pointer;color:var(--ink)}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt.ok{background:#b8f0cf;border-color:var(--pl)}
+.opt.no{background:#ffc9d6;border-color:var(--die);animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.fb{font-size:1.5rem;font-weight:700;min-height:2.2rem;margin:14px 0 6px}
+.hidden{display:none}
+.fall{position:fixed;top:-50px;font-size:2.2rem;z-index:9;pointer-events:none;animation:fall 3s linear forwards}
+@keyframes fall{to{transform:translateY(115vh) rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<button class="btn" id="snd" aria-pressed="true">🔊 Ton an</button>
+<header>
+  <div class="hero" aria-hidden="true"><span>👴</span><span>👵</span><span>👨</span><span>👩</span><span>👦</span><span>👧</span></div>
+  <h1>Meine Familie</h1>
+  <p class="sub">Klicke auf die Karten und höre zu!</p>
+</header>
+<nav role="tablist">
+  <button role="tab" aria-selected="true" data-t="lernen">📚 Lernen</button>
+  <button role="tab" aria-selected="false" data-t="baum">🌳 Stammbaum</button>
+  <button role="tab" aria-selected="false" data-t="quiz">🎮 Quiz</button>
+</nav>
+<main>
+  <section id="lernen">
+    <div class="legend"><span class="tag der">der</span><span class="tag die">die</span><span class="tag pl">die (Mehrzahl)</span></div>
+    <div id="groups"></div>
+  </section>
+
+  <section id="baum" hidden>
+    <div class="group">
+      <h2>Der Stammbaum</h2>
+      <p>Klicke auf eine Person. Ich bin in der Mitte!</p>
+      <div class="tree">
+        <div class="row" id="t-gp"></div>
+        <div class="line"></div>
+        <div class="fams">
+          <div class="fam"><div class="row" id="t-onk"></div><div class="line"></div><div class="row" id="t-cou"></div></div>
+          <div class="fam"><div class="row" id="t-par"></div><div class="line"></div><div class="row" id="t-kid"></div></div>
+        </div>
+      </div>
+      <div class="bubble" id="bubble">Das ist meine Familie.</div>
+    </div>
+  </section>
+
+  <section id="quiz" hidden>
+    <div class="qbox" id="qbox"></div>
+  </section>
+</main>
+
+<script>
+const $=s=>document.querySelector(s);
+/* [emoji, Artikel, Wort, Satz, Plural?, Rätsel] */
+const G=[
+ {t:'Die Kernfamilie',d:'Mutter, Vater und Kinder.',i:[
+  ['👨','der','Vater','Das ist mein Vater.',0,'Der Mann von meiner Mutter ist mein …'],
+  ['👩','die','Mutter','Das ist meine Mutter.',0,'Die Frau von meinem Vater ist meine …'],
+  ['👦','der','Sohn','Das ist mein Sohn.',0,'Mein Kind ist ein Junge. Er ist mein …'],
+  ['👧','die','Tochter','Das ist meine Tochter.',0,'Mein Kind ist ein Mädchen. Sie ist meine …']]},
+ {t:'Die Großeltern',d:'Opa und Oma sind die Eltern von meinen Eltern.',i:[
+  ['👴','der','Großvater','Das ist mein Großvater. Ich sage auch Opa.',0,'Der Vater von meinem Vater ist mein …'],
+  ['👵','die','Großmutter','Das ist meine Großmutter. Ich sage auch Oma.',0,'Die Mutter von meiner Mutter ist meine …']]},
+ {t:'Bruder und Schwester',d:'Wir haben die gleichen Eltern.',i:[
+  ['🧒','der','Bruder','Das ist mein Bruder.',0,'Der Sohn von meinen Eltern ist mein …'],
+  ['👧🏽','die','Schwester','Das ist meine Schwester.',0,'Die Tochter von meinen Eltern ist meine …']]},
+ {t:'Onkel, Tante, Cousin, Cousine',d:'Das ist die große Familie.',i:[
+  ['🧔','der','Onkel','Das ist mein Onkel.',0,'Der Bruder von meiner Mutter ist mein …'],
+  ['👩‍🦰','die','Tante','Das ist meine Tante.',0,'Die Schwester von meinem Vater ist meine …'],
+  ['👦🏽','der','Cousin','Das ist mein Cousin.',0,'Der Sohn von meinem Onkel ist mein …'],
+  ['👧🏻','die','Cousine','Das ist meine Cousine.',0,'Die Tochter von meiner Tante ist meine …']]},
+ {t:'Die Enkel',d:'Ich bin Opa oder Oma. Das sind meine Enkel.',i:[
+  ['👦🏻','der','Enkelsohn','Das ist mein Enkelsohn.',0,'Ich bin Opa. Der Sohn von meiner Tochter ist mein …'],
+  ['👧🏼','die','Enkeltochter','Das ist meine Enkeltochter.',0,'Ich bin Oma. Die Tochter von meinem Sohn ist meine …']]},
+ {t:'Mehrzahl: mehr als eine Person',d:'Im Plural sagen wir immer „die“.',i:[
+  ['👨‍👩','die','Eltern','Das sind meine Eltern.',1,'Mutter und Vater zusammen sind meine …'],
+  ['👴👵','die','Großeltern','Das sind meine Großeltern.',1,'Opa und Oma zusammen sind meine …'],
+  ['🧒👧','die','Geschwister','Das sind meine Geschwister.',1,'Bruder und Schwester zusammen sind meine …'],
+  ['👦👧','die','Kinder','Das sind meine Kinder.',1,'Sohn und Tochter zusammen sind meine …'],
+  ['👦🏻👧🏼','die','Enkelkinder','Das sind meine Enkelkinder.',1,'Enkelsohn und Enkeltochter zusammen sind meine …']]}
+];
+const ALL=G.flatMap(g=>g.i);
+const cls=x=>x[4]?'pl':x[1];
+
+/* Ton */
+let sound=true,ac;
+function speak(t){
+  if(!sound||!('speechSynthesis' in window))return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(t);u.lang='de-DE';u.rate=.8;
+  const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('de'));
+  if(v)u.voice=v;speechSynthesis.speak(u);
+}
+function tone(seq){
+  if(!sound)return;
+  try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+  let t=ac.currentTime;
+  seq.forEach(([f,d,ty])=>{const o=ac.createOscillator(),g=ac.createGain();o.type=ty||'sine';o.frequency.value=f;
+   g.gain.setValueAtTime(.18,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d);t+=d*.8;});}catch(e){}
+}
+const OK=()=>tone([[523,.12],[659,.12],[784,.22]]);
+const NO=()=>tone([[220,.18,'sawtooth'],[165,.28,'sawtooth']]);
+const WIN=()=>tone([[523,.12],[659,.12],[784,.12],[1047,.35]]);
+$('#snd').onclick=e=>{sound=!sound;e.target.textContent=sound?'🔊 Ton an':'🔇 Ton aus';e.target.setAttribute('aria-pressed',sound);if(!sound)speechSynthesis.cancel();};
+
+/* Tabs */
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('nav button').forEach(x=>x.setAttribute('aria-selected',x===b));
+  ['lernen','baum','quiz'].forEach(id=>$('#'+id).hidden=id!==b.dataset.t);
+  if(b.dataset.t==='quiz'&&!Q.on)startQuiz();
+});
+
+/* Lernen */
+$('#groups').innerHTML=G.map((g,gi)=>`<div class="group"><h2>${g.t}</h2><p>${g.d}</p><div class="grid">`+
+ g.i.map((x,i)=>`<button class="card ${cls(x)}" data-g="${gi}" data-i="${i}"><span class="e">${x[0]}</span><span class="a">${x[1]}</span> <span class="w">${x[2]}</span><span class="s">${x[3]}</span></button>`).join('')+`</div></div>`).join('');
+$('#groups').onclick=e=>{
+  const c=e.target.closest('.card');if(!c)return;
+  const x=G[c.dataset.g].i[c.dataset.i];
+  tone([[660,.08],[880,.1]]);speak(`${x[1]} ${x[2]}. ${x[3]}`);
+  c.classList.remove('on');void c.offsetWidth;c.classList.add('on');
+};
+
+/* Stammbaum */
+const T={
+ 't-gp':[['👴','der','Opa / Großvater','Das ist mein Großvater.'],['👵','die','Oma / Großmutter','Das ist meine Großmutter.']],
+ 't-onk':[['🧔','der','Onkel','Das ist mein Onkel.'],['👩‍🦰','die','Tante','Das ist meine Tante.']],
+ 't-cou':[['👦🏽','der','Cousin','Das ist mein Cousin.'],['👧🏻','die','Cousine','Das ist meine Cousine.']],
+ 't-par':[['👨','der','Vater','Das ist mein Vater.'],['👩','die','Mutter','Das ist meine Mutter.']],
+ 't-kid':[['🧒','der','Bruder','Das ist mein Bruder.'],['🙋','me','ich','Das bin ich!'],['👧🏽','die','Schwester','Das ist meine Schwester.']]
+};
+for(const k in T)$('#'+k).innerHTML=T[k].map((p,i)=>`<button class="p ${p[1]==='me'?'me':p[1]}" data-k="${k}" data-i="${i}"><span class="e">${p[0]}</span><b>${p[1]==='me'?'':p[1]+' '}${p[2]}</b></button>`).join('');
+$('#baum').onclick=e=>{
+  const b=e.target.closest('.p');if(!b)return;
+  const p=T[b.dataset.k][b.dataset.i];
+  $('#bubble').textContent=p[3];tone([[660,.08],[880,.1]]);speak(p[3]);
+};
+
+/* Quiz */
+const Q={on:0};
+const shuf=a=>[...a].sort(()=>Math.random()-.5);
+const lab=x=>x[1]+' '+x[2];
+function startQuiz(){
+  const items=shuf(ALL).slice(0,10);
+  Object.assign(Q,{on:1,n:0,score:0,streak:0,best:0,list:items.map((x,i)=>({x,type:['hoer','raetsel','artikel'][i%3]})),done:0});
+  $('#qbox').className='qbox';ask();
+}
+function ask(){
+  if(Q.n>=Q.list.length)return end();
+  const {x,type}=Q.list[Q.n];Q.done=0;
+  let task,body,opts;
+  if(type==='hoer'){task='Hör zu. Welches Wort ist das?';body=`<button class="btn" id="rep">🔊 Nochmal hören</button>`;
+    opts=shuf([x,...shuf(ALL.filter(y=>y!==x)).slice(0,3)]).map(y=>[lab(y),y===x]);setTimeout(()=>speak(lab(x)),300);}
+  else if(type==='raetsel'){task='Was ist richtig?';body=`<div class="clue">${x[5]}</div>`;
+    opts=shuf([x,...shuf(ALL.filter(y=>y!==x&&y[4]===x[4])).slice(0,3)]).map(y=>[lab(y),y===x]);}
+  else{task='Der oder die?';body=`<div class="clue">___ ${x[2]}</div>`;
+    opts=x[4]?[['die',1],['der',0]]:shuf([['der',x[1]==='der'],['die',x[1]==='die']]);
+    if(x[4])opts=shuf(opts);}
+  $('#qbox').innerHTML=`<div class="stats"><span>Frage ${Q.n+1} von ${Q.list.length}</span><span>⭐ ${Q.score}</span><span>🔥 ${Q.streak}</span></div>
+   <div class="bar"><i style="width:${Q.n/Q.list.length*100}%"></i></div>
+   <p class="task">${task}</p><div class="big" id="big">❓</div>${body}
+   <div class="opts">${opts.map((o,i)=>`<button class="opt" data-ok="${o[1]?1:0}">${o[0]}</button>`).join('')}</div>
+   <div class="fb" id="fb"></div><button class="btn hidden" id="next">Weiter ➜</button>`;
+  const r=$('#rep');if(r)r.onclick=()=>speak(lab(x));
+  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(b,x));
+  $('#next').onclick=()=>{Q.n++;ask();};
+}
+function pick(b,x){
+  if(Q.done)return;Q.done=1;
+  const ok=b.dataset.ok==='1';
+  document.querySelectorAll('.opt').forEach(o=>{o.disabled=true;if(o.dataset.ok==='1')o.classList.add('ok');});
+  $('#big').textContent=x[0];
+  if(ok){Q.score++;Q.streak++;Q.best=Math.max(Q.best,Q.streak);OK();
+    $('#fb').textContent=Q.streak>=3?`Super! ${Q.streak} richtige Antworten in Folge! 🔥`:'Richtig! 🎉';speak(x[3]);}
+  else{b.classList.add('no');Q.streak=0;NO();$('#fb').textContent=`Fast! Richtig ist: ${lab(x)}`;speak(lab(x));}
+  $('#next').classList.remove('hidden');$('#next').focus();
+}
+function end(){
+  const s=Q.score,n=Q.list.length;
+  const msg=s>=9?'Fantastisch! Du bist ein Familien-Profi! 🏆':s>=6?'Sehr gut! Weiter so! 👏':'Gut gemacht! Übe noch einmal. 💪';
+  $('#qbox').innerHTML=`<div class="big">${s>=6?'🏆':'🌟'}</div><h2>${s} von ${n} Punkten</h2><p class="clue">${msg}</p><p>Beste Serie: 🔥 ${Q.best}</p><button class="btn" id="again">🔄 Nochmal spielen</button>`;
+  $('#again').onclick=startQuiz;Q.on=0;
+  if(s>=6){WIN();speak(msg);confetti();}
+}
+function confetti(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const em=['🎉','⭐','💛','🎈','👨‍👩‍👧‍👦'];
+  for(let i=0;i<28;i++){const s=document.createElement('span');s.className='fall';s.textContent=em[i%em.length];
+   s.style.left=Math.random()*100+'vw';s.style.animationDelay=Math.random()*1.2+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),4500);}
+}
+if('speechSynthesis' in window)speechSynthesis.getVoices();
+</script>
+</body>
+</html>
